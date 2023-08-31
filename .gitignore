@@ -3,3 +3,4 @@ fibonacci/fibonacci.sln
 fibonacci/fibonacci.vcxproj
 fibonacci/fibonacci.vcxproj.filters
 fibonacci/fibonacci.vcxproj.user
+fibonacci/x64
