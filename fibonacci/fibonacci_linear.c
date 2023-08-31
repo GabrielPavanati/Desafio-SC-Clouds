@@ -12,8 +12,6 @@ int main()
         printf("Informe um número não negativo: ");
         scanf_s("%d", &N);
 
-        break;
-
         if (N >= 0)
         {
             break;
@@ -25,5 +23,29 @@ int main()
 
 int fib(int N)
 {
-    return N;
+    int memoria[3];
+
+    if (N == 0) return 0;
+    else if (N == 1) return 1;
+    else
+    {
+        for (int i = 0; i <= N; i++)
+        {
+            if (i == 0)
+            {
+                memoria[0] = 0;
+            }
+            else if (i == 1)
+            {
+                memoria[1] = 1;
+            }
+            else
+            {
+                memoria[2] = memoria[1] + memoria[0];
+                memoria[0] = memoria[1];
+                memoria[1] = memoria[2];
+            }
+        }
+        return memoria[2];
+    }
 }
