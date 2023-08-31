@@ -18,10 +18,11 @@ int main()
         }
     }
 
-    printf("\n fib(%d) = %d \n", N, fib(N));
+    printf("\n fib(%d) = %d \n", N, fib_linear(N));
+    printf("\n fib(%d) = %d \n", N, fib_recursivo(N));
 }
 
-int fib(int N)
+int fib_linear(int N)
 {
     int memoria[3];
 
@@ -47,5 +48,15 @@ int fib(int N)
             }
         }
         return memoria[2];
+    }
+}
+
+int fib_recursivo(int N)
+{
+    if (N == 0) return 0;
+    else if (N == 1) return 1;
+    else
+    {
+        return fib_recursivo(N - 1) + fib_recursivo(N - 2);
     }
 }
