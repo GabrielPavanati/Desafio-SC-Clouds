@@ -3,10 +3,11 @@
 
 int main()
 {
-    setlocale(LC_ALL, "pt_BR.UTF-8");
+    setlocale(LC_ALL, "pt_BR.UTF-8"); // Função que permite a exibição de caracteres acentuados
 
     int N;
     
+    // Trata input para receber apenas número não negativo
     while (1)
     {
         printf("Informe um número não negativo: ");
@@ -18,10 +19,11 @@ int main()
         }
     }
 
-    printf("\n fib(%d) = %d \n", N, fib_linear(N));
-    printf("\n fib(%d) = %d \n", N, fib_recursivo(N));
+    printf("\n fib_linear(%d) = %d \n", N, fib_linear(N)); // Imprime o N-ésimo termo usando a função linear
+    printf("\n fib_recursivo(%d) = %d \n", N, fib_recursivo(N)); // Imprime o N-ésimo termo usando a função recursiva
 }
 
+// Função para calcular o N-ésimo termo da sequência de Fibonacci de forma linear
 int fib_linear(int N)
 {
     int memoria[3];
@@ -51,6 +53,7 @@ int fib_linear(int N)
     }
 }
 
+// Função para calcular o N-ésimo termo da sequência de Fibonacci de forma recursiva
 int fib_recursivo(int N)
 {
     if (N == 0) return 0;
