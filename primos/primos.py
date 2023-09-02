@@ -1,28 +1,23 @@
 # coding: latin-1
 
 # Função que calcula todos os números primos até o número N de forma linear
-def p_linear(N):
-    memoria = []
+def p_linear(N, seq_primos=[]):
     
-    for i in range(2, N + 1):
-                
-        num_divisiveis = 0
-
-        for j in range(1, N + 1):
-            if i % j == 0:
-                num_divisiveis += 1
-                
-        if num_divisiveis == 2:
-            memoria.append(i)
-            
-    return memoria
-
-seq_recursiva = []
+    for num in range(2, N + 1):
+        if all(num % primo != 0 for primo in seq_primos):
+            seq_primos.append(num)
+        
+    return seq_primos
 
 # Função que calcula todos os números primos até o número N de forma recursiva
-def p_recursivo(N):
-    # código
-    return 1
+def p_recursivo(N, num=2, seq_primos=[]):
+    if num > N:
+        return seq_primos
+    
+    if all(num % primo != 0 for primo in seq_primos):
+        seq_primos.append(num)
+    
+    return p_recursivo(N, num + 1, seq_primos)
 
 # Trata input para receber apenas números maiores que 1
 while True:
